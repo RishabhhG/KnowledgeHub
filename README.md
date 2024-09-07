@@ -36,46 +36,55 @@ features and functionalities.
 
 ## Installation
 
-# Clone the repository:
+### Clone the repository:
+```bash
 git clone https://github.com/your-username/KnowledgeHub-backend.git
 cd KnowledgeHub-backend
-# Set up environment variables:
+```
 
-Create a .env file in the root of the project and add your environment variables.
+### Set up environment variables:
+Create a `.env` file in the root of the project and add your environment variables.
 
-bash
-Copy code
+To create the `.env` file, run:
+```bash
 touch .env
-Example .env file:
+```
 
-env
-Copy code
+Example `.env` file:
+```env
 PORT=5000
 DATABASE_URL=your_database_url
 CLOUDINARY_URL=your_cloudinary_url
 RAZORPAY_KEY_ID=your_razorpay_key_id
 RAZORPAY_KEY_SECRET=your_razorpay_key_secret
-Running the Application
-Locally
+```
 
-# Install dependencies:
+### Running the Application Locally
 
-bash
-Copy code
+#### Install dependencies:
+```bash
 npm install
-Start the server:
+```
 
-bash
-Copy code
+#### Start the server:
+```bash
 npm start
-The server will run on http://localhost:5000.
+```
+
+The server will run on [http://localhost:5000](http://localhost:5000).
 
 ## Using Docker
-# Build the Docker image:
-docker build -t knowledgehub-backend .
 
-# Run the Docker container:
+### Build the Docker image:
+```bash
+docker build -t knowledgehub-backend .
+```
+
+### Run the Docker container:
+```bash
 docker run -d -p 5000:5000 --env-file .env --name knowledgehub-backend-container knowledgehub-backend
+```
+
 
 
 ## System Architecture
