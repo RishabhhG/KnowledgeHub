@@ -34,6 +34,50 @@ showcase their expertise. In the following sections, we will delve into the tech
 of the platform, which will provide a comprehensive understanding of the platform's
 features and functionalities.
 
+## Installation
+
+# Clone the repository:
+git clone https://github.com/your-username/KnowledgeHub-backend.git
+cd KnowledgeHub-backend
+# Set up environment variables:
+
+Create a .env file in the root of the project and add your environment variables.
+
+bash
+Copy code
+touch .env
+Example .env file:
+
+env
+Copy code
+PORT=5000
+DATABASE_URL=your_database_url
+CLOUDINARY_URL=your_cloudinary_url
+RAZORPAY_KEY_ID=your_razorpay_key_id
+RAZORPAY_KEY_SECRET=your_razorpay_key_secret
+Running the Application
+Locally
+
+# Install dependencies:
+
+bash
+Copy code
+npm install
+Start the server:
+
+bash
+Copy code
+npm start
+The server will run on http://localhost:5000.
+
+## Using Docker
+# Build the Docker image:
+docker build -t knowledgehub-backend .
+
+# Run the Docker container:
+docker run -d -p 5000:5000 --env-file .env --name knowledgehub-backend-container knowledgehub-backend
+
+
 ## System Architecture
 
 The KnowledgeHub ed-tech platform consists of three main components: the front end, the
