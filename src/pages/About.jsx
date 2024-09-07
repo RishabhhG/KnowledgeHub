@@ -1,132 +1,122 @@
 import React, { useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import FoundingStory from "../assets/Images/FoundingStory.png"
-import BannerImage1 from "../assets/Images/aboutus1.webp"
-import BannerImage2 from "../assets/Images/aboutus2.webp"
-import BannerImage3 from "../assets/Images/aboutus3.webp"
-import ContactFormSection from "../components/core/AboutPage/ContactFormSection"
-import LearningGrid from "../components/core/AboutPage/LearningGrid"
-import Quote from "../components/core/AboutPage/Quote"
-import StatsComponenet from "../components/core/AboutPage/Stats"
-import HighlightText from "../components/core/HomePage/HighlightText"
-import ReviewSlider from "../components/common/ReviewSlider"
-import Footer from "../components/common/Footer"
+import StoryImage from "../assets/Images/FoundingStory.png";
+import Image1 from "../assets/Images/aboutus1.webp";
+import Image2 from "../assets/Images/aboutus2.webp";
+import Image3 from "../assets/Images/aboutus3.webp";
+import ContactFormSection from "../components/core/AboutPage/ContactFormSection";
+import LearningGrid from "../components/core/AboutPage/LearningGrid";
+import Quote from "../components/core/AboutPage/Quote";
+import StatsComponent from "../components/core/AboutPage/Stats";
+import HighlightText from "../components/core/HomePage/HighlightText";
+import ReviewSlider from "../components/common/ReviewSlider";
+import Footer from "../components/common/Footer";
 
 const About = () => {
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
-    AOS.refresh();
+    AOS.init({ duration: 1500, easing: 'ease-in-out' });
   }, []);
+
   return (
-    <div>
-      <section className="bg-richblack-700">
-        <div className="relative mx-auto flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-center text-white">
-          <header data-aos="zoom-in" className="mx-auto py-20 text-4xl font-semibold lg:w-[70%]">
-            Driving Innovation in Online Education for a
-            <HighlightText text={"Brighter Future"} />
-            <p data-aos="zoom-in-down" className="mx-auto mt-3 text-center text-base font-medium text-richblack-300 lg:w-[95%]">
-              Studynotion is at the forefront of driving innovation in online
-              education. We're passionate about creating a brighter future by
-              offering cutting-edge courses, leveraging emerging technologies,
-              and nurturing a vibrant learning community.
-            </p>
-          </header>
-          <div className="sm:h-[70px] lg:h-[150px]"></div>
-          <div className="absolute bottom-0 left-[50%] grid w-[100%] translate-x-[-50%] translate-y-[30%] grid-cols-3 gap-3 lg:gap-5">
-            <img data-aos="flip-right" src={BannerImage1} alt="" />
-            <img data-aos="flip-right" src={BannerImage2} alt="" />
-            <img data-aos="flip-right" src={BannerImage3} alt="" />
+    <div className="bg-gray-100">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-t from-blue-600 via-purple-700 to-pink-500 text-white py-24">
+        <div className="container mx-auto flex flex-col items-center text-center gap-10">
+          <h1 className="text-5xl font-bold leading-tight" data-aos="fade-down">
+            Empowering Education for a 
+            <HighlightText text={"Brilliant Future"} />
+          </h1>
+          <p className="text-lg lg:w-2/3" data-aos="fade-up" data-aos-delay="200">
+            Welcome to EduSpark! We're committed to transforming online education into an exciting, interactive experience where learning is fun, engaging, and accessible to everyone.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
+            <img data-aos="fade-right" src={Image1} alt="Inspiration" className="rounded-lg shadow-xl hover:scale-105 transition-transform duration-500" />
+            <img data-aos="fade-up" src={Image2} alt="Collaboration" className="rounded-lg shadow-xl hover:scale-105 transition-transform duration-500" />
+            <img data-aos="fade-left" src={Image3} alt="Innovation" className="rounded-lg shadow-xl hover:scale-105 transition-transform duration-500" />
           </div>
         </div>
       </section>
 
-      <section className="border-b border-richblack-700">
-        <div className="mx-auto flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-richblack-500">
-          <div className="h-[100px] "></div>
+      {/* Quote Section */}
+      <section className="bg-gray-50 py-16">
+        <div className="container mx-auto">
           <Quote />
         </div>
       </section>
 
-      <section>
-        <div className="mx-auto flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-richblack-500">
-          <div className="flex flex-col items-center gap-10 lg:flex-row justify-between">
-            <div className="my-24 flex lg:w-[50%] flex-col gap-10">
-              <h1 className="bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCB045] bg-clip-text text-4xl font-semibold text-transparent lg:w-[70%] ">
-                Our Founding Story
-              </h1>
-              <p className="text-base font-medium text-richblack-300 lg:w-[95%]">
-                Our e-learning platform was born out of a shared vision and
-                passion for transforming education. It all began with a group of
-                educators, technologists, and lifelong learners who recognized
-                the need for accessible, flexible, and high-quality learning
-                opportunities in a rapidly evolving digital world.
-              </p>
-              <p className="text-base font-medium text-richblack-300 lg:w-[95%]">
-                As experienced educators ourselves, we witnessed firsthand the
-                limitations and challenges of traditional education systems. We
-                believed that education should not be confined to the walls of a
-                classroom or restricted by geographical boundaries. We
-                envisioned a platform that could bridge these gaps and empower
-                individuals from all walks of life to unlock their full
-                potential.
-              </p>
-            </div>
-
-            <div>
-              <img
-                src={FoundingStory}
-                alt=""
-                className="shadow-[0_0_20px_0] shadow-[#FC6767]"
-              />
-            </div>
+      {/* Story Section */}
+      <section className="bg-white py-20">
+        <div className="container mx-auto flex flex-col lg:flex-row gap-12 items-center">
+          <div className="lg:w-1/2" data-aos="fade-right">
+            <img src={StoryImage} alt="Our Story" className="rounded-lg shadow-2xl hover:scale-105 transition-all duration-500" />
           </div>
-          <div className="flex flex-col items-center lg:gap-10 lg:flex-row justify-between">
-            <div className="my-24 flex lg:w-[40%] flex-col gap-10">
-              <h1 className="bg-gradient-to-b from-[#FF512F] to-[#F09819] bg-clip-text text-4xl font-semibold text-transparent lg:w-[70%] ">
-                Our Vision
-              </h1>
-              <p className="text-base font-medium text-richblack-300 lg:w-[95%]">
-                With this vision in mind, we set out on a journey to create an
-                e-learning platform that would revolutionize the way people
-                learn. Our team of dedicated experts worked tirelessly to
-                develop a robust and intuitive platform that combines
-                cutting-edge technology with engaging content, fostering a
-                dynamic and interactive learning experience.
-              </p>
-            </div>
-            <div className="my-24 flex lg:w-[40%] flex-col gap-10">
-              <h1 className="bg-gradient-to-b from-[#1FA2FF] via-[#12D8FA] to-[#A6FFCB] text-transparent bg-clip-text text-4xl font-semibold lg:w-[70%] ">
-              Our Mission
-              </h1>
-              <p className="text-base font-medium text-richblack-300 lg:w-[95%]">
-              Our mission goes beyond just delivering courses online. We wanted to create a vibrant community of learners, where individuals can connect, collaborate, and learn from one another. We believe that knowledge thrives in an environment of sharing and dialogue, and we foster this spirit of collaboration through forums, live sessions, and networking opportunities.
-              </p>
-            </div>
+          <div className="lg:w-1/2 flex flex-col gap-8" data-aos="fade-left">
+            <h2 className="text-4xl font-extrabold text-gradient-to-r from-green-400 to-blue-500">
+              The Journey of EduSpark
+            </h2>
+            <p className="text-gray-700">
+              EduSpark was born from the belief that education should be more than just textbooks and exams. We wanted to create a platform that inspires learners to explore, innovate, and collaborate, breaking the traditional barriers of education.
+            </p>
+            <p className="text-gray-700">
+              Our journey began with a small team of educators and technologists who were passionate about creating flexible, quality-driven education. Today, EduSpark serves thousands of learners worldwide, empowering them to achieve their dreams.
+            </p>
           </div>
         </div>
       </section>
 
-      <StatsComponenet />
-      <section className="mx-auto mt-20 flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-white">
-        <LearningGrid />
-        <ContactFormSection />
+      {/* Vision and Mission Section */}
+      <section className="bg-gradient-to-b from-gray-900 to-gray-800 text-white py-20">
+        <div className="container mx-auto flex flex-col lg:flex-row gap-16 items-center">
+          <div className="flex-1" data-aos="fade-up">
+            <h2 className="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-red-500">
+              Our Vision
+            </h2>
+            <p className="mt-4 text-lg">
+              We envision a future where education transcends boundaries. A world where learners from every corner of the globe can access high-quality, engaging learning experiences that spark curiosity and ignite potential.
+            </p>
+          </div>
+
+          <div className="flex-1" data-aos="fade-up" data-aos-delay="100">
+            <h2 className="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-teal-300 to-blue-500">
+              Our Mission
+            </h2>
+            <p className="mt-4 text-lg">
+              Our mission is to provide a dynamic learning platform that promotes collaboration, creativity, and critical thinking. By blending technology with human connection, we aim to cultivate a vibrant learning community.
+            </p>
+          </div>
+        </div>
       </section>
 
-      <div className="relative mx-auto my-20 flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 bg-richblack-900 text-white">
-        {/* Reviws from Other Learner */}
-        <h1 className="text-center text-4xl font-semibold mt-8">
-          Reviews from other learners
-        </h1>
-        {/* <ReviewSlider /> */}
-        <ReviewSlider />
-      </div>
-      {/* <Footer /> */}
+      {/* Stats Section */}
+      <section className="bg-gray-50 py-16">
+        <div className="container mx-auto">
+          <StatsComponent />
+        </div>
+      </section>
+
+      {/* Learning Resources & Contact Form */}
+      <section className="bg-gradient-to-t from-blue-500 via-purple-600 to-pink-500 py-20 text-white">
+        <div className="container mx-auto">
+          <LearningGrid />
+          <ContactFormSection />
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section className="bg-white py-20">
+        <div className="container mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-8">
+            What Our Learners Say
+          </h2>
+          <ReviewSlider />
+        </div>
+      </section>
+
+      {/* Footer */}
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;

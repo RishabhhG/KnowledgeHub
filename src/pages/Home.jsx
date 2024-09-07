@@ -1,209 +1,83 @@
-import { FaArrowRight } from "react-icons/fa"
-import { Link } from "react-router-dom"
-import React, { useEffect } from "react";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import Banner from "../assets/Images/banner1.mp4"
-import Footer from "../components/common/Footer"
-import ReviewSlider from "../components/common/ReviewSlider"
-import CTAButton from "../components/core/HomePage/Button"
-import CodeBlocks from "../components/core/HomePage/CodeBlocks"
-import ExploreMore from "../components/core/HomePage/ExploreMore"
-import HighlightText from "../components/core/HomePage/HighlightText"
-import InstructorSection from "../components/core/HomePage/InstructorSection"
-import LearningLanguageSection from "../components/core/HomePage/LearningLanguageSection"
-import TimelineSection from "../components/core/HomePage/TimelineSection"
+import React from "react";
+import { Link } from "react-router-dom";
+import { FaArrowRight, FaChalkboardTeacher, FaLaptopCode, FaUserFriends } from "react-icons/fa";
+import Footer from "../components/common/Footer";
+import CTAButton from "../components/core/HomePage/Button";
+import TestimonialCard from "../components/core/HomePage/TestimonialCard";
 
 function Home() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
-    AOS.refresh();
-  }, []);
   return (
     <>
-      {/* Section 1 */}
-      <div className="relative mx-auto flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 text-white">
-        {/* Become a Instructor Button */}
-        <Link to={"/signup"}>
-          <div  data-aos="zoom-in" className="group mx-auto mt-16 w-fit rounded-full bg-richblack-800 p-1 font-bold text-richblack-200 drop-shadow-[0_1.5px_rgba(255,255,255,0.25)] transition-all duration-200 hover:scale-95 hover:drop-shadow-none">
-            <div className="flex flex-row items-center gap-2 rounded-full px-10 py-[5px] transition-all duration-200 group-hover:bg-richblack-900">
-              <p>Become an Instructor</p>
-              <FaArrowRight />
-            </div>
-          </div>
-        </Link>
-
-        {/* Heading */}
-        <div data-aos="fade-right" className="text-center text-4xl font-semibold">
-          Empower Your Future with
-          <HighlightText text={"Coding Skills"} />
-        </div>
-
-        {/* Sub Heading */}
-        <div  data-aos="fade-left" className="-mt-3 w-[90%] text-center text-lg font-bold text-richblack-300">
-          With our online coding courses, you can learn at your own pace, from
-          anywhere in the world, and get access to a wealth of resources,
-          including hands-on projects, quizzes, and personalized feedback from
-          instructors.
-        </div>
-
-        {/* CTA Buttons */}
-        <div className="mt-8 lg:flex xl:flex md:flex flex-row gap-7 hidden">
-          <CTAButton active={true} linkto={"/signup"}>
-            Learn More
-          </CTAButton>
-          <CTAButton active={false} linkto={"/login"}>
-            Book a Demo
-          </CTAButton>
-        </div>
-        <div className=" flex  flex-row gap-7 lg:hidden xl:hidden md:hidden ">
-          <CTAButton active={true} linkto={"/signup"}>
-           Signup
-          </CTAButton>
-          <CTAButton active={false} linkto={"/login"}>
-            login
-          </CTAButton>
-        </div>
-
-        {/* Video */}
-        <div data-aos="flip-right"className="mx-3 my-7 shadow-[10px_-5px_50px_-5px] shadow-blue-200">
-          <video
-            muted
-            loop
-            autoPlay
-          >
-            <source src={Banner} type="video/mp4" />
-          </video>
-        </div>
-
-        {/* Code Section 1  */}
-        <div>
-          <CodeBlocks
-            position={"lg:flex-row"}
-            heading={
-              <div data-aos="fade-right" className="text-4xl font-semibold">
-                Unlock your
-                <HighlightText text={"coding potential"} /> with our online
-                courses.
-              </div>
-            }
-            subheading={
-              "Our courses are designed and taught by industry experts who have years of experience in coding and are passionate about sharing their knowledge with you."
-            }
-            ctabtn1={{
-              btnText: "Try it Yourself",
-              link: "/signup",
-              active: true,
-            }}
-            ctabtn2={{
-              btnText: "Learn More",
-              link: "/signup",
-              active: false,
-            }}
-            codeColor={"text-yellow-25"}
-            codeblock={`<!DOCTYPE html>\n <html lang="en">\n<head>\n<title>This is myPage</title>\n</head>\n<body>\n<h1><a href="/">Header</a></h1>\n<nav> <a href="/one">One</a> <a href="/two">Two</a> <a href="/three">Three</a>\n</nav>\n</body>`}
-            backgroundGradient={<div className="codeblock1 absolute"></div>}
-          />
-        </div>
-
-        {/* Code Section 2 */}
-        <div>
-          <CodeBlocks
-            position={"lg:flex-row-reverse"}
-            heading={
-              <div data-aos="fade-left" className="w-[100%] text-4xl font-semibold lg:w-[50%]">
-                Start
-                <HighlightText text={"coding in seconds"} />
-              </div>
-            }
-            subheading={
-              "Go ahead, give it a try. Our hands-on learning environment means you'll be writing real code from your very first lesson."
-            }
-            ctabtn1={{
-              btnText: "Continue Lesson",
-              link: "/signup",
-              active: true,
-            }}
-            ctabtn2={{
-              btnText: "Learn More",
-              link: "/signup",
-              active: false,
-            }}
-            codeColor={"text-white"}
-            codeblock={`import React from "react";\n import CTAButton from "./Button";\nimport TypeAnimation from "react-type";\nimport { FaArrowRight } from "react-icons/fa";\n\nconst Home = () => {\nreturn (\n<div>Home</div>\n)\n}\nexport default Home;`}
-            backgroundGradient={<div className="codeblock2 absolute"></div>}
-          />
-        </div>
-
-        {/* Explore Section */}
-        <ExploreMore />
-      </div>
-
-      {/* Section 2 */}
-      <div className="bg-pure-greys-5 text-richblack-700">
-        <div className="homepage_bg h-[320px]">
-          {/* Explore Full Catagory Section */}
-          <div className="mx-auto flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8">
-            <div className="lg:h-[150px]"></div>
-            <div className="flex flex-row gap-7 text-white lg:mt-8">
-              <CTAButton active={true} linkto={"/signup"}>
-                <div className="flex items-center gap-2">
-                  Explore Full Catalog
-                  <FaArrowRight />
-                </div>
-              </CTAButton>
-              <CTAButton active={false} linkto={"/login"}>
-                Learn More
-              </CTAButton>
-            </div>
-          </div>
-        </div>
-
-        <div className="mx-auto flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 ">
-          {/* Job that is in Demand - Section 1 */}
-          <div className="mb-10 mt-[-100px] flex flex-col justify-between gap-7 lg:mt-20 lg:flex-row lg:gap-0">
-            <div className="text-4xl font-semibold lg:w-[45%] ">
-              Get the skills you need for a{" "}
-              <HighlightText text={"job that is in demand."} />
-            </div>
-            <div className="flex flex-col items-start gap-10 lg:w-[40%]">
-              <div className="text-[16px]">
-                The modern StudyNotion is the dictates its own terms. Today, to
-                be a competitive specialist requires more than professional
-                skills.
-              </div>
-              <CTAButton active={true} linkto={"/signup"}>
-                <div className="">Learn More</div>
-              </CTAButton>
-            </div>
-          </div>
-
-          {/* Timeline Section - Section 2 */}
-          <TimelineSection />
-
-          {/* Learning Language Section - Section 3 */}
-          <LearningLanguageSection />
+      {/* Hero Section */}
+      <div className="relative h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: 'url(https://img.freepik.com/free-vector/matrix-style-binary-code-digital-falling-numbers-blue-background_1017-37387.jpg?t=st=1725683056~exp=1725686656~hmac=6098a278ba20a6554b406fdfa7e796fa2a106386976811bad827f638c19812ea&w=996)' }}>
+        <div className="absolute inset-0 bg-gradient-to-b from-black to-transparent opacity-75"></div>
+        <div className="relative z-10 text-center text-white px-4">
+          <h1 className="text-6xl font-bold mb-6">Empower Your Future with <span className="text-blue-400">Coding Skills</span></h1>
+          <p className="text-2xl mb-8">Join our platform and unlock the world of programming with hands-on projects and expert guidance.</p>
+          <CTAButton linkto="/signup" active>Get Started</CTAButton>
         </div>
       </div>
 
-      {/* Section 3 */}
-      <div className="relative mx-auto my-20 flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 bg-richblack-900 text-white">
-        {/* Become a instructor section */}
-        <InstructorSection />
+      {/* Features Section */}
+      <div className="py-16 bg-gray-100">
+        <div className="container mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-12">Why Choose Us?</h2>
+          <div className="flex flex-wrap justify-center gap-8">
+            <div className="max-w-sm bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+              <FaChalkboardTeacher className="text-4xl text-blue-400 mb-4 mx-auto" />
+              <h3 className="text-2xl font-semibold mb-2">Expert Instructors</h3>
+              <p className="text-gray-600">Learn from industry experts with years of experience in coding.</p>
+            </div>
+            <div className="max-w-sm bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+              <FaLaptopCode className="text-4xl text-blue-400 mb-4 mx-auto" />
+              <h3 className="text-2xl font-semibold mb-2">Hands-on Learning</h3>
+              <p className="text-gray-600">Engage with interactive lessons and real-world projects.</p>
+            </div>
+            <div className="max-w-sm bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+              <FaUserFriends className="text-4xl text-blue-400 mb-4 mx-auto" />
+              <h3 className="text-2xl font-semibold mb-2">Community Support</h3>
+              <p className="text-gray-600">Join a community of learners and get support from mentors.</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        {/* Reviws from Other Learner */}
-        <h1 className="text-center text-4xl font-semibold mt-8">
-          Reviews from other learners
-        </h1>
-        <ReviewSlider />
+      {/* Testimonials Section */}
+      <div className="py-16 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+        <div className="container mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-12">What Our Students Say</h2>
+          <div className="flex flex-wrap justify-center gap-8">
+            <TestimonialCard
+              profilePic="https://via.placeholder.com/150"
+              name="John Doe"
+              feedback="This platform transformed my career. The projects and support were top-notch."
+            />
+            <TestimonialCard
+              profilePic="https://via.placeholder.com/150"
+              name="Jane Smith"
+              feedback="I loved the hands-on approach and real-world examples. Highly recommend!"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Become an Instructor Section */}
+      <div className="relative py-16 bg-gray-800 text-white">
+        <div className="container mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-4">Share Your Knowledge</h2>
+          <p className="text-lg text-gray-300 mb-8">Join our team of instructors and help students around the world achieve their goals.</p>
+          <Link to="/signup">
+            <div className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-blue-500 hover:bg-blue-600 transition duration-300">
+              Become an Instructor <FaArrowRight className="ml-2" />
+            </div>
+          </Link>
+        </div>
       </div>
 
       {/* Footer */}
       <Footer />
     </>
-  )
+  );
 }
 
 export default Home;
